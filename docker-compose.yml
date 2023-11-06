@@ -118,6 +118,7 @@ services:
           - rengine
 
   proxy:
+    container_name: rengine-proxy
     restart: always
     image: nginx:alpine
     ports:
@@ -144,6 +145,8 @@ services:
 
 networks:
   rengine_network:
+    driver: bridge
+    name: rengine_network
 
 volumes:
   tool_config:
